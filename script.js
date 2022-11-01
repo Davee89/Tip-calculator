@@ -8,9 +8,20 @@ const label = document.querySelector(".label");
 let tipPercentage;
 const btn = document.querySelectorAll(".btn");
 
-// * Percentage buttons activation * //
+// ! Calculator mechanism ! //
 for (let i = 0; i < btn.length; i++) {
-  btn[i].addEventListener("active", givePrecentage);
+  btn[i].addEventListener("click", function () {
+    if (people.value > 0) {
+      let tip = Number(bill.value) * (parseFloat(btn[i].textContent) / 100);
+      tipAmount.textContent = tip / Number(people.value);
+      totalAmount.textContent = (Number(bill.value) + tip) / Number(people.value);
+    }
+    // ! Not giving correct amount of people cause warning ! //
+    else {
+      people.classList.add("wrong");
+      label.classList.remove("hidden");
+    }
+  });
 }
 
 // * Number of people restoring styling when changed over 0 *
@@ -18,27 +29,5 @@ people.addEventListener("input", function () {
   if (people.value > 0) {
     people.classList.remove("wrong");
     label.classList.add("hidden");
-  } else {
-    totalAmount.textContent = "";
-    tipAmount.textContent = "";
   }
 });
-
-// ! Counting Tips and Totals Process !
-bill.addEventListener("input", function (e) {
-  let tot = Number(e.target.value) + Number(tipAmount.textContent);
-  let tip = Number(e.target.value) * tipPercentage;
-  if (people.value > 0) {
-    totalAmount.textContent = tot;
-  } else {
-    totalAmount.textContent = "";
-    tipAmount.textContent = "";
-    people.classList.add("wrong");
-    label.classList.remove("hidden");
-  }
-});
-
-// ? Functions used in Events Up ?
-function givePrecentage(e) {
-  return (tipPercentage = e.target.textContent);
-}

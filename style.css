@@ -80,7 +80,7 @@ header {
   padding: 10px;
   font-size: 0.8rem;
 }
-.btn:focus {
+.btn:focus-within {
   background-color: var(--Strongcyan);
   color: var(--Darkgrayishcyan);
 }
