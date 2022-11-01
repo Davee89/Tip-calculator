@@ -14,8 +14,10 @@ const peopleWarning = function () {
   label.classList.remove("hidden");
 };
 const showTips = function (tip) {
-  tipAmount.textContent = tip / Number(people.value);
-  totalAmount.textContent = (Number(bill.value) + tip) / Number(people.value);
+  let tipFinal = tip / Number(people.value);
+  let totalFinal = (Number(bill.value) + tip) / Number(people.value);
+  tipAmount.textContent = "$" + tipFinal.toFixed(2);
+  totalAmount.textContent = "$" + totalFinal.toFixed(2);
 };
 
 // ! Calculator mechanism with normal buttons ! //
