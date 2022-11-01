@@ -19,7 +19,7 @@
       <div class="calculator__options">
         <div class="calculator__bill">
           <p class="calculator__title">Bill</p>
-          <input class="input" id="bill" type="number" placeholder="" />
+          <input class="input" id="bill" type="number" placeholder="0" />
         </div>
         <div class="calculator__tip">
           <p class="calculator__title">Select Tip %</p>
@@ -37,14 +37,14 @@
             <p class="calculator__title">Number of People</p>
             <label class="label hidden" for="people">Can't be 0</label>
           </div>
-          <input class="input" type="number" name="" id="people" />
+          <input class="input" type="number" placeholder="0" id="people" />
         </div>
       </div>
       <div class="calculator__result">
         <p class="calculator__result--name">Tip Amount<span>/ person</span></p>
-        <p class="calculator__amount tip"></p>
+        <p class="calculator__amount tip">$0.00</p>
         <p class="calculator__result--name">Total<span>/ person</span></p>
-        <p class="calculator__amount total"></p>
+        <p class="calculator__amount total">$0.00</p>
         <button class="btn2">Reset</button>
       </div>
     </main>

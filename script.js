@@ -56,8 +56,8 @@ btn2.addEventListener("click", function () {
   bill.value = "";
   custom.value = "";
   people.value = "";
-  tipAmount.textContent = "";
-  totalAmount.textContent = "";
+  tipAmount.textContent = "$0.00";
+  totalAmount.textContent = "$0.00";
   people.classList.remove("wrong");
   label.classList.add("hidden");
 });
