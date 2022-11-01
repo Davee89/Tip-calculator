@@ -1,4 +1,5 @@
 "use strict";
+// ? VARIABLES //
 const tipAmount = document.querySelector(".tip");
 const totalAmount = document.querySelector(".total");
 const bill = document.querySelector("#bill");
@@ -7,9 +8,12 @@ const label = document.querySelector(".label");
 let tipPercentage;
 const btn = document.querySelectorAll(".btn");
 
+// * Percentage buttons activation * //
 for (let i = 0; i < btn.length; i++) {
   btn[i].addEventListener("active", givePrecentage);
 }
+
+// * Number of people restoring styling when changed over 0 *
 people.addEventListener("input", function () {
   if (people.value > 0) {
     people.classList.remove("wrong");
@@ -20,6 +24,7 @@ people.addEventListener("input", function () {
   }
 });
 
+// ! Counting Tips and Totals Process !
 bill.addEventListener("input", function (e) {
   let tot = Number(e.target.value) + Number(tipAmount.textContent);
   let tip = Number(e.target.value) * tipPercentage;
@@ -33,6 +38,7 @@ bill.addEventListener("input", function (e) {
   }
 });
 
+// ? Functions used in Events Up ?
 function givePrecentage(e) {
   return (tipPercentage = e.target.textContent);
 }
