@@ -7,6 +7,7 @@ const people = document.querySelector("#people");
 const label = document.querySelector(".label");
 const btn = document.querySelectorAll(".btn");
 const custom = document.querySelector("#custom");
+const btn2 = document.querySelector(".btn2");
 
 // * Function used below * //
 const peopleWarning = function () {
@@ -49,4 +50,14 @@ people.addEventListener("input", function () {
     people.classList.remove("wrong");
     label.classList.add("hidden");
   }
+});
+// ! RESET BUTTON ! //
+btn2.addEventListener("click", function () {
+  bill.value = "";
+  custom.value = "";
+  people.value = "";
+  tipAmount.textContent = "";
+  totalAmount.textContent = "";
+  people.classList.remove("wrong");
+  label.classList.add("hidden");
 });
