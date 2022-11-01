@@ -1,0 +1,196 @@
+/* 
+
+* Author: David Matras
+* Starting date: 01.11.2022
+! Ending date: **.**.****
+
+*/
+
+:root {
+  --Strongcyan: hsl(172, 67%, 45%);
+  --Verydarkcyan: hsl(183, 100%, 15%);
+  --Darkgrayishcyan: hsl(186, 14%, 43%);
+  --Grayishcyan: hsl(184, 14%, 56%);
+  --Lightgrayishcyan: hsl(185, 41%, 84%);
+  --Verylightgrayishcyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  font-size: 24px;
+  font-family: "Space Mono";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ? Starting Styling  */
+
+body {
+  background-color: var(--Lightgrayishcyan);
+}
+header {
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  margin: 1rem auto;
+  text-align: center;
+}
+.calculator__main {
+  background-color: var(--White);
+  border-radius: 0.5rem;
+  padding: 20px;
+}
+.calculator__bill {
+  margin: 20px auto;
+}
+.calculator__title {
+  font-size: 0.6rem;
+}
+#bill {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--White);
+  background-color: var(--Verylightgrayishcyan);
+  width: 100%;
+  background-image: url(/images/icon-dollar.svg);
+  background-position: 15px;
+  background-repeat: no-repeat;
+  text-align: end;
+  font-family: "Space Mono";
+  font-size: 0.8rem;
+}
+#bill:focus-visible {
+  border: 2px solid var(--Strongcyan);
+  outline: none;
+}
+.calculator__tip {
+  margin: 20px auto;
+}
+.calculator__btns {
+  display: grid;
+  grid-template-columns: calc(50% - 7.5px) calc(50% - 7.5px);
+  gap: 15px;
+  margin: 15px 0 20px;
+}
+.btn {
+  background-color: var(--Verydarkcyan);
+  color: var(--White);
+  font-family: "Space Mono";
+  border: 1px solid var(--White);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.8rem;
+}
+.btn:focus {
+  background-color: var(--Strongcyan);
+  color: var(--Darkgrayishcyan);
+}
+#custom {
+  padding: 10px;
+  padding-right: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--White);
+  background-color: var(--Verylightgrayishcyan);
+  text-align: end;
+  font-family: "Space Mono";
+  font-size: 0.8rem;
+}
+#custom:focus-visible {
+  border: 2px solid var(--Strongcyan);
+  outline: none;
+}
+.calculator__people {
+  margin: 20px auto;
+}
+#people {
+  padding: 10px;
+  padding-right: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--White);
+  background-color: var(--Verylightgrayishcyan);
+  text-align: end;
+  font-family: "Space Mono";
+  font-size: 0.8rem;
+  width: 100%;
+  background-image: url(/images/icon-person.svg);
+  background-position: 15px;
+  background-repeat: no-repeat;
+}
+#people:focus-visible {
+  border: 2px solid var(--Strongcyan);
+  outline: none;
+}
+.calculator__result {
+  background-color: var(--Verydarkcyan);
+  border-radius: 10px;
+  padding: 40px 25px 25px;
+  color: var(--White);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  row-gap: 25px;
+}
+.calculator__result--name {
+  font-size: 0.6rem;
+  align-self: center;
+}
+.calculator__result--name span {
+  display: block;
+  font-size: 0.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  word-spacing: 5px;
+}
+.calculator__amount {
+  text-align: end;
+  font-size: 1.2rem;
+  color: var(--Strongcyan);
+  align-self: center;
+}
+.btn2 {
+  background-color: var(--Strongcyan);
+  grid-column: 1 / 3;
+  padding: 10px;
+  border: 1px solid var(--Verydarkcyan);
+  border-radius: 5px;
+  font-family: "Space Mono";
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--Verydarkcyan);
+}
+.btn2:hover {
+  background-color: var(--Lightgrayishcyan);
+}
+.wrong {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.calculator__label {
+  display: flex;
+  justify-content: space-between;
+}
+.label {
+  font-size: 0.6rem;
+  color: orange;
+}
+.hidden {
+  display: none;
+}
+@media screen and (min-width: 700px) {
+  .calculator__main {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px;
+    gap: 40px;
+  }
+  .calculator__btns {
+    grid-template-columns: calc(33% - 10px) calc(33% - 10px) calc(33% - 10px);
+  }
+  .calculator__amount {
+    font-size: 2rem;
+  }
+  .btn2 {
+    margin-top: 100px;
+  }
+}
