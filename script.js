@@ -23,21 +23,22 @@ const showTips = (tip) => {
 };
 
 // ! Calculator mechanism with normal buttons ! //
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function calculateTips() {
-    if (peopleInput.value > 0) {
-      let tip = billInput.valueAsNumber * (parseFloat(buttons[i].textContent) / 100);
+buttons.forEach((button) =>
+  button.addEventListener("click", function () {
+    if (peopleInput.value) {
+      let tip = billInput.valueAsNumber * (parseFloat(button.textContent) / 100);
       showTips(tip);
     }
     // ! Not giving correct amount of people --> show warning ! //
     else {
       peopleWarning();
     }
-  });
-}
+  })
+);
+
 // ! Calculator mechanism with *** custom input ***  ! //
 customInput.addEventListener("input", function () {
-  if (peopleInput.value > 0) {
+  if (peopleInput.value) {
     let tip = (billInput.valueAsNumber * customInput.valueAsNumber) / 100;
     showTips(tip);
   } else {
@@ -47,7 +48,7 @@ customInput.addEventListener("input", function () {
 
 // * Number of people restoring styling when changed over 0 *
 peopleInput.addEventListener("input", function () {
-  if (peopleInput.value > 0) {
+  if (peopleInput.value) {
     peopleInput.classList.remove("wrong");
     label.classList.add("hidden");
   }
