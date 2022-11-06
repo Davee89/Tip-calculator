@@ -10,7 +10,7 @@ const customInput = document.querySelector("#custom");
 const buttonReset = document.querySelector(".btn2");
 const dollarSign = document.querySelector(".calculator__amount span");
 
-// * Function used below * //
+/// * Function used below * ///
 const peopleWarning = () => {
   peopleInput.classList.add("wrong");
   label.classList.remove("hidden");
